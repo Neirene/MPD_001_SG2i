@@ -1,0 +1,155 @@
+﻿.loginBgUp {
+    position: absolute;
+
+    background-color: rgb(76, 87, 85);
+    width: 100%;
+    height: 50%;
+    z-index: 9999;
+    top: 0%;
+     -webkit-transition: all 0.2s ease; -moz-transition: all 0.2s ease; -o-transition: all 0.2s ease; transition: all 0.2s ease;
+
+}
+
+.loginBgDown {
+    position: absolute;
+
+    background-color: rgb(76, 87, 85);
+    width: 100%;
+    height: 50%;
+    z-index: 9999;
+    bottom: 0%;
+     -webkit-transition: all 0.2s ease; -moz-transition: all 0.2s ease; -o-transition: all 0.2s ease; transition: all 0.2s ease;
+    pointer-events: none;
+}
+
+.loginLoadBar {
+    width: 0%;
+
+    background-color: rgb(0, 224, 255);
+    height: 3px;
+    position: absolute;
+    z-index: 9999;
+    top: 50%;
+    box-shadow: 0px 0px 5px rgb(0, 224, 255);
+     -webkit-transition: all 0.2s ease; -moz-transition: all 0.2s ease; -o-transition: all 0.2s ease; transition: all 0.2s ease;
+}
+
+
+.finishedBar {
+    box-shadow: 0px 0px 3px rgb(255, 255, 255);
+
+
+    background-color: rgb(255, 255, 255);
+}
+
+.loginBoxPlaceholder {
+    z-index: 9999;
+     -webkit-transition: all 0.2s ease; -moz-transition: all 0.2s ease; -o-transition: all 0.2s ease; transition: all 0.2s ease;
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background-color: rgba(0, 0, 0, 0.16);
+    /* border: 2px solid white; */
+    top: 50%;
+    left: 50%;
+    padding: 15px;
+    /* box-shadow: 0px 0px 300px rgb(255, 255, 255); */
+  
+
+    margin-top: -200px;
+    margin-left: -200px;
+}
+
+.loadPercent {
+    position: absolute;
+
+
+    color: rgb(255, 255, 255);
+    font-size: 100px;
+    z-index: 9999;
+    font-family: sans-serif;
+    bottom: 4%;
+    left: 2%;
+    font-style: italic;
+}
+
+.loadPercentGhost {
+    position: absolute;
+
+
+    color: rgba(255, 255, 255, 0.05);
+    font-size: 330px;
+    z-index: 9999;
+    font-family: sans-serif;
+    bottom: 4%;
+    left: 2%;
+    font-style: italic;
+}
+
+.logoLoginBox {
+
+    width: 600px;
+    
+
+    position: absolute;
+
+    height:300px;
+        background-image: url('../img/logosg2inew.png');
+    background-repeat: no-repeat;
+    background-position: 49%  6%;
+    background-size: 340px;
+    
+
+    top: 0%;
+
+    left: 50%;
+
+    margin-left: -300px;
+
+}
+
+.titleTextLogin {
+    position: absolute;
+    color: white;
+
+    top: 40%;
+    left: 50%;
+    text-align: center;
+    width: 50%;
+    font-size: 24px;
+    font-weight: 400;
+    margin-left: -25%;
+}
+
+.hideSubtitle {
+    display:none;
+}
+
+.hideLogo {
+    background-image:none;
+}
+
+
+.errorTextContainer {
+    z-index: 9999;
+
+    color: rgb(0, 224, 255);
+    position: absolute;
+    font-size: 49px;
+    width: 70%;
+    text-align: center;
+    top: 31%;
+    left: 15%;
+    text-shadow: 0px 0px 10px rgb(0, 224, 255);
+}
+
+.returnToLogin {
+    position: absolute;
+
+    color: white;
+    z-index: 9999;
+    width: 20%;
+    text-align: center;
+    top: 55%;
+    left: 40%;
+}

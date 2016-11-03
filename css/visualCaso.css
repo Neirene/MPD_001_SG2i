@@ -1,0 +1,385 @@
+﻿
+.caseSection {
+    height: 100%;
+    overflow: auto;
+}
+.caseHeader {
+    /* background-color: rgba(204, 204, 204, 0.32); */
+    height: 610px;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    -webkit-transition: all 0.2s ease; -moz-transition: all 0.2s ease; -o-transition: all 0.2s ease; transition: all 0.2s ease;
+}
+
+
+.caseHeaderExpanded {
+    height: 96%;
+    -webkit-transition: all 0.2s ease; -moz-transition: all 0.2s ease; -o-transition: all 0.2s ease; transition: all 0.2s ease;
+    background-color: rgb(255, 255, 255);
+    /* color: white; */
+}
+
+
+.gisViewIcon {
+    width: 138px;
+
+    color:rgb(76, 87, 85);
+    height: 22px;
+    position: relative;
+    float: left;
+    text-align: left;
+    text-indent: 28px;
+    line-height: 24px;
+    /* left: 36%; */
+    top: 8px;
+    font-size: 14px;
+    background-image: url('../img/dishIcon.png');
+    background-repeat: no-repeat;
+    background-position: -5px -7px;
+    background-size: 35px;
+    background-color: white;
+    border: 2px solid rgb(76, 87, 85);
+    cursor: pointer;
+    -webkit-transition: all 0.2s ease; -moz-transition: all 0.2s ease; -o-transition: all 0.2s ease; transition: all 0.2s ease;
+}
+
+
+.gisViewIcon:hover {
+  background-color: rgb(76, 87, 85);
+    background-image: url('../img/dishIconH.png');
+color:white;
+-webkit-transition: all 0.2s ease; -moz-transition: all 0.2s ease; -o-transition: all 0.2s ease; transition: all 0.2s ease;
+}
+
+
+.caseHeaderId {
+    position: absolute;
+    font-size: 26px;
+    font-weight: 600;
+    top: 0px;
+    left: 0%;
+}
+.caseHeaderTitle {
+    font-size: 19px;
+    font-weight: 500;
+    position: absolute;
+    top: 30px;
+    left: 0%;
+}
+.caseHeaderType {
+    position: absolute;
+    top: 106px;
+    right: 0%;
+    font-size: 28px;
+    font-weight: 400;
+}
+.caseHeaderDate {
+    position: absolute;
+    top: 4px;
+    right: 0%;
+    font-size: 13px;
+}
+.caseHeaderModify {
+    position: absolute;
+    top: 19px;
+    right: 0%;
+    font-size: 13px;
+    color: red;
+}
+.caseHeaderTeam {
+    position: absolute;
+    top: 35px;
+    right: 0%;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.caseHeaderStatus {position:absolute;top: 74px;right: 0%;background-color: rgba(107, 107, 107, 0.17);/* color: white; */padding: 5px;font-size: 14px;font-weight: 600;/* border-left: 9px solid rgba(0, 0, 0, 0.42); */}
+
+.caseStatContainer {
+    position: absolute;
+
+    width: 50%;
+    height: 40px;
+    top: 99px;
+    left: 0%;
+}
+
+.caseHeaderPriority { -webkit-animation: fade 5s forwards; -webkit-animation-iteration-count: infinite; position: relative; float: left; top: 8px;font-size: 14px;padding: 5px; margin-right: 6px; background-color: rgb(189, 50, 50);color: white;}
+.caseHeaderImpact { -webkit-animation: fade 5s forwards; -webkit-animation-iteration-count: infinite; position: relative; float: left; top: 8px;color: rgb(255, 255, 255);font-size: 14px;background-color: rgb(189, 50, 50);padding: 5px; margin-right: 6px;}
+.caseHeaderSource {position:absolute;top: 51px;right: 0%;font-size: 13px;}
+.caseHeaderTimeline {position:absolute;top: 390px;left: 0%;width: 100%;height: 210px;/* background-color: rgba(54, 131, 161, 0.17); */color: white;/* border-left: 2px solid black; */}
+.caseHeaderSTitle {
+    position: absolute;
+
+    top: -50px;
+    font-size: 29px;
+    left: 0%;
+    border-top: 2px solid rgba(0, 0, 0, 0.28);
+    width: 100%;
+    color: rgb(66, 142, 179);
+    padding-top: 3px;
+}
+.caseHeaderS01 {position:absolute;top: 0px;left: 0%;width: 100%;height: 90%;color: black;}
+
+.caseHeaderS01 ul {
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+.caseHeaderS01 li {
+    color: rgb(111, 111, 111);
+    background-color: rgba(236, 236, 236, 0.29);
+    margin-top: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    text-indent: 36px;
+    font-size: 15px;
+    background-image: url('../img/casesbticon.png');
+    background-repeat: no-repeat;
+    background-position: 5px 1px;
+    background-size: 25px;
+}
+
+.caseHeaderS02 {position:absolute;top: 45%;left: 3%;}
+.caseHeaderS03 {position:absolute;top: 61%;left: 3%;}
+.caseHeaderS04 {position:absolute;top: 77%;left: 3%;}
+.caseHeaderS05 {position:absolute;top: 30%;left: 62%;}
+.caseHeaderS06 {position:absolute;top: 45%;left: 62%;}
+.caseHeaderS07 {position:absolute;top: 187px;right: 4px;color: rgb(128, 121, 121);cursor: pointer;font-size: 14px;}
+
+.caseBodyDesc {position:absolute;top: 175px;left: 0%;width: 100%;font-size: 13px;height: 160px;/* background-color: grey; *//* color: white; */overflow: auto;padding: 0%;}
+
+
+
+.caseHeaderShowBox {
+    display:block;
+    -webkit-animation:fadeIn 200ms;
+}
+
+.caseHeaderHideBox {
+    display:none;
+    -webkit-animation:fadeOut 200ms;
+}
+
+
+.caseBody {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 240px;
+}
+.caseBodyCenter {
+    position: absolute;
+    width: 59%;
+    height: 100%;
+    left: 0%;
+    font-size: 14px;
+    overflow: auto;
+    display: none;
+}
+
+.caseBodyCenter h2 {
+
+}
+
+.caseBodySidebar {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 0%;
+    overflow: hidden;
+    top: 0%;
+}
+
+.caseSidebarBlock {
+    /* border: 2px solid rgb(76, 87, 85); */
+    width: 100%;
+    left: 0%;
+    position: absolute;
+    margin-bottom: 10px;
+    /* background-color: rgba(236, 236, 236, 0.29); */
+    /* color: white; */
+}
+.caseSidebarTitle {
+    /* background-color: rgb(76, 87, 85); */
+    color: rgb(66, 142, 179);
+    font-size: 26px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-indent: 0px;
+}
+.caseSidebarContent {
+    width: 100%;
+    height: 140px;
+    overflow: auto;
+}
+
+.caseSidebarContent ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.caseSidebarContent li {
+    background-color: rgba(236, 236, 236, 0.29);
+    margin-bottom: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    /* color: white; */
+    text-indent: 30px;
+    /* float: left; */
+    /* display: block; */
+    width: 100%;
+    font-size: 15px;
+    background-image: url('../img/casesbticon.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 27px;
+}
+
+.caseSidebarMore {
+    margin-top: 16px;
+    margin-bottom: 5px;
+    text-align: right;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+
+@-webkit-keyframes fadeIn {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+
+@-webkit-keyframes fadeOut {
+    from {opacity:1;}
+    to {opacity:0;}
+}
+
+
+
+
+
+.sectionTabsContainer {
+    width: 100%;
+
+    height: 30px;
+    background-color: rgb(76, 87, 85);
+    margin-bottom: 5px;
+    color: white;
+    overflow: hidden;
+}
+
+.caseBodyDescTitle {
+    position: absolute;
+
+    top: 140px;
+    font-size: 29px;
+    left: 0%;
+    border-top: 2px solid rgba(0, 0, 0, 0.28);
+    width: 100%;
+    color: rgb(66, 142, 179);
+    padding-top: 3px;
+}
+
+.closeCaseWindow {
+    position: absolute;
+
+    left: 40%;
+    top: 754px;
+    background-color: rgb(76, 87, 85);
+    color: white;
+    padding: 7px;
+    cursor: pointer;
+    display: none;
+}
+
+@-webkit-keyframes fade {
+0%   {opacity:0.5;}
+50%   {opacity:1;}
+100% {opacity:0.5;}
+}
+
+.taskBlock {
+    width: 49%;
+    left: 51%;
+}
+.docsBlock {
+    width: 49%;
+    right: 15%;
+}
+
+
+.UIHorizontalTabs {
+    z-index: 3000;
+    margin-bottom: 5px;
+    height: 32px;
+}
+
+.UIHorizontalTabs .CenterHorizontalTabs {
+    background: none;
+    padding: 0px;
+}
+
+.UIHorizontalTabs .TabsContainer {
+    height: 19px;
+}
+
+
+.UIHorizontalTabs .UITab {
+    float: left;
+    text-align: center;
+    width: auto;
+    font-weight: normal;
+    background-color: none;
+    color: rgb(76, 87, 85);
+    margin-right: 10px;
+    height: inherit;
+    padding: 5px;
+}
+
+.UITabContainer .UIHorizontalTabs .UITab {
+    height: 24px;
+}
+
+.UIHorizontalTabs .NormalTabStyle .SelectedTab {
+    color: none;
+    line-height: none;
+    margin-right: none;
+    background-color: none;
+    margin-top: -2px;
+    border-bottom: 3px solid rgb(76, 87, 85);
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+
+.UIHorizontalTabs .NormalTabStyle .SelectedTab .LeftTab {
+    background: none;
+    line-height: none;
+    padding-left: 0px;
+}
+
+.UIHorizontalTabs .NormalTabStyle .SelectedTab .RightTab {
+    background: none;
+    line-height: 0px;
+    padding-right: 0px;
+}
+
+.UIHorizontalTabs .NormalTabStyle .SelectedTab .MiddleTab {
+    background: none;
+    cursor: pointer;
+    font-weight: normal;
+    line-height: 24px;
+    padding: 0px;
+}
+
+.UITabContainer a.TabLabel {
+    line-height: 22px;
+    padding: 0px;
+}
+
+
+

@@ -1,0 +1,586 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <meta charset="utf-8" />
+   <title>BAHIA</title>
+   <link rel="stylesheet" href="css/style.css" media="all" />
+
+	 <!--DYNAMIC SECTIONS CSSs-->
+
+   <link rel="stylesheet" href="css/busquedaAvanzada.css" media="all" />
+
+   <link rel="stylesheet" href="css/visualCaso.css" media="all" />
+   <link rel="stylesheet" href="css/listadoCasos.css" media="all" />
+
+   <link rel="stylesheet" href="css/loginEx.css" media="all" />
+   <link rel="stylesheet" href="css/timelineTest.css" media="all" />
+   <link rel="stylesheet" href="css/bitacora.css" media="all" />
+   <link rel="stylesheet" href="css/matrixList.css" media="all" />
+
+
+	 <!--SCRIPTS-->
+
+   <script type="text/javascript" src="js/jquery.js"></script>
+   <script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+   <script type="text/javascript" src="js/d3.min.js"></script>
+   <script type="text/javascript" src="js/home.js"></script>
+   <script type="text/javascript" src="js/d3jStuff.js"></script>
+   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+   <script src="https://maps.googleapis.com/maps/api/js&sensor=true" type="text/javascript"></script>
+
+
+   <!-- SCROLLBARS  -->
+   <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" />
+   <script src="js/jquery.mCustomScrollbar.min.js"></script>
+
+
+
+
+</head>
+<body>
+   <div class="wrapper">
+
+			<!--LOGIN ON WINDOW-->
+
+			<div class="loginBgUp"><div class="logoLoginBox"></div><div class="titleTextLogin">Centro Integrado de Gestão de Emergências – CIGE</div></div>
+			<div class="loginBgDown"></div>
+
+			<div class="loginLoadBar"></div>
+			<div class="loadPercent"></div>
+      <div class="loadPercentGhost"></div>
+      <div class="loginBoxPlaceholder">
+
+         <label style="width:80%;margin-left: 33px;margin-right:auto;margin-bottom:3%;color: white;font-size: 15px;font-weight: 400;">Username</label><input type="text" style="margin-left:auto;margin-right:auto;margin-top:2%;margin-bottom:3%;width: 320px;">
+         <label style="width: 300px;margin-left: 33px;margin-right:auto;font-size: 15px;margin-top:2%;margin-bottom:3%;color: white;font-weight: 400;">Password</label><input type="text" style="width:80%;margin-left:auto;margin-right:auto;margin-top:2%;margin-bottom:3%">
+
+         <input type="submit" class="loginBoxBt" value="LOG IN" style="width:80%;margin-left:auto;margin-right:auto;margin-top:2%;margin-bottom: 3%;position: absolute;bottom: 7px;left: 44px;height: 50px;">
+
+      </div>
+
+
+			<!------------------->
+
+      <div class="header">
+         <div class="logo">Centro Integrado de Gestão de Emergências – CIGE</div>
+
+         <div class="searchArea">
+
+
+            <div class="advSearch"></div>
+            <div class="magGlass"></div>
+            <input class="searchInput" name="q" placeholder="Search for a case...">
+
+						<!---ADVANCED SEARCH IMPORTED FROM JBOSS WATCHOUT!-->
+            <div class="advSearchBox">
+
+               <h2>Advanced Search</h2>
+
+               <div id="busquedaAvanzadaCasos">
+                  <h:form id="searchCasos">
+
+                     <a4j:outputpanel layout="block" id="formaBuscadorCasos">
+
+                        <div class="avanzadaSection01">
+
+                           <div class="section1a">
+
+                              <label>id Caso:</label>
+                              <input type="text" />
+                           </div>
+
+                           <div class="section1b">
+                              <label>Tipificacion:</label>
+                              <input type="text" />
+
+                        </div>
+													 </div>
+                        <div class="avanzadaSection02">
+
+                           <div class="section2a">
+                              <label></label>
+                           </div>
+
+                           <div class="section2b">
+                              <label>Busqueda por Fecha Creacion</label>
+                           </div>
+
+                           <div class="section2c">
+                              <h:selectbooleancheckbox id="checkFechaInicio" value="#{buscadorCasos.checkFechaInicio}" />
+                              <input type="text" />
+                           </div>
+                           <div class="section2d">
+                              <label>hasta</label>
+                           </div>
+                           <div class="section2e">
+                              <input type="text" />
+                           </div>
+
+                           <div class="section2ba">
+                              <label>Busqueda por Fecha Cierre</label>
+                           </div>
+
+                           <div class="section2bb">
+                              <h:selectbooleancheckbox id="checkFechaFin" value="#{buscadorCasos.checkFechaCierre}" />
+
+                              <input type="text" />
+                           </div>
+
+                           <div class="section2bc">
+                              <label>hasta</label>
+                           </div>
+
+                           <div class="section2bd">
+
+                              <input type="text" />
+                           </div>
+
+                        </div>
+                        <div class="avanzadaSection03">
+
+                           <div class="section4a">
+                              <h:outputlabel value="#{msgs.buscadorCasos_estadoCaso}" for="estadoCaso" />
+                              <input type="text" />
+                           </div>
+
+                           <div class="section4b">
+
+                              <h:outputlabel value="#{msgs.buscadorCasos_responsableInvestigacion}" for="responsable" rendered="#{userBean.hasRole('CREAR_CASO')}" />
+                              <input type="text" />
+                           </div>
+
+                        </div>
+
+                     </a4j:outputpanel>
+
+                     <div class="searchTypePlaceholder">
+                        <div class="searchTypeCaptionContainer">
+                           <div class="searchTypeCaption">Tipo de Busqueda:</div>
+                           <div class="searchTypeList">
+                              <ul>
+                                 <li id="liCasos" class="searchTypeSel">Casos</li>
+                                 <li id="liConocimientos">Conocimientos</li>
+                                 <li id="liTareas">Tareas</li>
+                              </ul>
+                           </div>
+
+                        </div>
+                     </div>
+
+                     <div class="avanzadaSection04">
+
+                        <input type="submit" value="Consultar Caso" />
+                        <input type="reset" value="Limpiar"  />
+                        <input type="button" value="Cerrar" onclick="dummyClose();" />
+
+                     </div>
+
+                  </h:form>
+               </div>
+               <!-- Buscar Conocimiento -->
+               <div id="busquedaAvanzadaConocimientos" style="display:none">
+
+                  <ui:insert name="buscarConocimiento">
+                     <ui:include src="/pages/conocimiento/buscadorConocimiento.xhtml" />
+                  </ui:insert>
+
+               </div>
+               <!-- Busqueda Tareas -->
+               <div id="busquedaAvanzadaTareas" style="display: none">
+
+                  <ui:insert name="buscarTareas">
+                     <ui:include src="/pages/tareas/buscadorTareas.xhtml" />
+                  </ui:insert>
+
+               </div>
+
+
+
+            </div>
+
+						<!--END OF ADVANCED SEARCH...-->
+
+
+
+         </div>
+
+         <div class="alertsContainer">
+            <div class="alertCounter">3</div>
+         </div>
+
+         <div class="sessionContainer">
+            <div class="userAvatar"></div>
+            <div class="userInfo">Maria Jose Moron Belmonte</div>
+            <div class="signIn">Sign In</div>
+
+
+
+         </div>
+
+
+         <div class="caption">Menu</div>
+         <div class="captionLogout" onclick="document.location.reload(true);">Logout</div>
+
+
+
+
+				 <!--HEADER CLOSURE-->
+      </div>
+     
+
+
+
+
+
+      <div class="contentsArea">
+
+				 <!---------EXPERIMENTAL AREA FOR TIMELINE AND OTHER FLASHY  STUFF-->
+
+
+				 <div class="timelineContainer">
+
+								
+								<div class="timelineArea">Timeline goes here on full HD glory ...</div>
+								
+        <div class="timelineIntroContainer">
+					 <!--TIMELINE LOADING ELEMENTS-->
+
+           <div class="timelineTitleBg"></div>
+           <div class="timelineTitle">タイムラインへようこそ。</div>
+					 
+					 <!----------------------------->
+
+
+
+
+
+
+
+        </div>					
+								
+				 </div>
+
+
+				 <!----------------------------------------------------------------->
+
+
+
+         <div class="alertsArea"><div class="alertMsg"><span>[20:11] Car crash accident at the main highway, requesting for support....</span></div></div>
+         <div id="map-canvas" class="googleMap"></div>
+				 
+
+         <!--<div class="loadingBar"><div class="loadingCircle"></div>Now Loading...</div>-->
+         
+          <div class="graphBtIcon">Indicators</div> 
+				 <div class="graphCaptionBox"></div>
+         <div class="Graph">
+
+            <div class="headerFloatBox icoFloat4">Intelligent Territory</div>
+            <div class="closeFloatBox">X</div>
+
+            <div class="graphArea" id="chartInit"></div>
+
+				 </div>
+         <div class="sideBoxCases">
+						<div class="sbCaseId"><span class="sbMarker">ID Caso:</span>20140202303055255123</div>
+						<div class="sbCaseType">BRHighway Accident Car Accident</div>
+						<div class="sbCaseLatestDate"><span class="sbMarker">Ult. Modif:</span>20/08/2014 11:23:45</div>
+						<div class="sbCaseShortDesc">The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymph</div>
+						<div class="sbClose">X</div>
+						<div class="sbMoreInfo">More Info...</div>
+            <div class="sbWatchVideo">Watch Video</div>
+						<div class="sbSeparator"></div>
+
+
+						<div class="sbExpandedBg">
+
+										 <div class="sbVideoContainer">
+              <object width="460" height="280">
+																	<param name="movie" value="//www.youtube.com/v/qlnuJlEXto0?version=3&amp;hl=en_US&amp;rel=0"></param>
+																	<param name="autoplay" value="1"></param>
+																	<param name="allowFullScreen" value="true"></param>
+																	<param name="allowscriptaccess" value="always"></param>
+																	<embed src="//www.youtube.com/v/qlnuJlEXto0?version=3&amp;hl=en_US&amp;rel=0" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed>
+							</object>
+											</div>
+
+									</div>
+
+				 </div>
+         <div class="btGis1" id="mapType">Satellite</div>
+         <div class="btGis2" id="mapLabels">Tilt Map</div>
+         <div class="btGis3" id="timelineLoad">Street View</div> <!--TIMELINE TEST REMOVE AFTER SUCCESS-->
+
+				 <!---FLOATING CONTAINERS AREA-->
+
+				 <div class="floatingBoxWrapper">
+
+
+        <div class="floatingBoxContainer" id="myCasesBox">
+           <div class="headerFloatBox icoFloat4">My Cases</div>
+           <div class="closeFloatBox">X</div>
+           <div class="contentsFloatBox">
+              <ul>
+                 <li class="openHeadline">This is a headline</li>
+                 <li class="openHeadline">This is a headline</li>
+                 <li class="openHeadline">This is a headline</li>
+                 <li class="openHeadline">This is a headline</li>
+                 <li class="openHeadline">This is a headline</li>,
+                 <li class="openHeadline">This is a headline</li>
+              </ul>
+              <p id="moreCases">More</p>
+           </div>
+        </div>
+
+        <div class="floatingBoxContainer" id="myTasksBox">
+           <div class="headerFloatBox icoFloat3">My Tasks</div>
+           <div class="closeFloatBox">X</div>
+           <div class="contentsFloatBox">
+              <ul>
+                 <li>This is a headline</li>
+                 <li>This is a headline</li>
+                 <li>This is a headline</li>
+                 <li>This is a headline</li>
+                 <li>This is a headline</li>
+                 <li>This is a headline</li>
+              </ul>
+              <p class="expandTasks">More</p>
+           </div>
+        </div>
+
+        <div class="floatingBoxContainer" id="myNewsBox" style="display:none">
+           <div class="headerFloatBox icoFloat2">My News</div>
+           <div class="closeFloatBox">X</div>
+           <div class="contentsFloatBox">
+              <ul>
+                 <li>This is a headline</li>
+                 <li>This is a headline</li>
+                 <li>This is a headline</li>
+                 <li>This is a headline</li>
+                 <li>This is a headline</li>
+                 <li>This is a headline</li>
+              </ul>
+              <p id="openTimeline">More</p>
+           </div>
+        </div>
+
+
+
+								</div>
+				 <!--END FLOATING  CONTAINER-->
+
+         <div class="alertsBoxTest closeAlerts">
+
+            <div class="alertsListContainer">
+               <ul class="alertsList">
+                  <li><div class="alertIcon"></div><div class="alertTitle">You have a new assigned case</div><div class="alertRemove"></div></li>
+                  <li><div class="alertIcon"></div><div class="alertTitle">There has been an update on case 30404</div><div class="alertRemove"></div></li>
+                  <li><div class="alertIcon"></div><div class="alertTitle">New information arrived on case 23113</div><div class="alertRemove"></div></li>
+                  <li><div class="alertIcon"></div><div class="alertTitle">You have a new assigned case</div><div class="alertRemove"></div></li>
+                  <li><div class="alertIcon"></div><div class="alertTitle">There has been an update on case 30404</div><div class="alertRemove"></div></li>
+                  <li><div class="alertIcon"></div><div class="alertTitle">New information arrived on case 23113</div><div class="alertRemove"></div></li>
+                  <li><div class="alertIcon"></div><div class="alertTitle">You have a new assigned case</div><div class="alertRemove"></div></li>
+                  <li><div class="alertIcon"></div><div class="alertTitle">There has been an update on case 30404</div><div class="alertRemove"></div></li>
+                  <li><div class="alertIcon"></div><div class="alertTitle">New information arrived on case 23113</div><div class="alertRemove"></div></li>
+
+               </ul>
+
+
+            </div>
+            
+
+         </div>
+
+
+
+
+
+
+				 <div class="sideMenu">
+								<div class="menuWrapper">
+                   <div class="menuSeparator">SG2i Main Menu</div>
+
+                   <ul class="menuContent">
+                      <li><p id="caseListBt">Casos</p></li>
+                      <li><p>Organos de Obtencion</p></li>
+                      <li><p>Tareas</p></li>
+                      <li><p>Noticias</p></li>
+                      <li><p>Alertas</p></li>
+                      <li><p>Gestion del conocimiento</p></li>
+                      <li><p>Intelligent Analyst Platform</p></li>
+                      <li><p>Formacion y Simulacion</p></li>
+                      <li><p class="expandTasks">Eisenhower</p></li>
+                   </ul>
+
+							  <div class="menuSeparator">Dashboard Options</div>
+
+
+
+                   <ul class="menuExtras">
+                      <li><p class="cList" id="caseListBlock">Cases List</p></li>
+                      <li><p class="aList">My Alerts</p></li>
+                      <li><p class="tList" id="taskListBlock">My Tasks</p></li>
+                      <li><p class="nList" id="newsListBlock">News</p></li>
+                   </ul>
+
+                   <div class="menuSeparator">System Settings</div>
+
+                   <ul class="menuExtras">
+                      <li><p class="logList">Logout</p></li>
+                   </ul>
+												</div>
+
+
+				</div>
+				 
+
+         <div class="legendBox">
+            <div class="legendOptionIcon"></div>
+
+            <div class="legendClosedCaption">
+
+               <ul>
+                  <li><div class="legendColor"></div>Robbery</li>
+                  <li><div class="legendColor"></div>Homicide</li>
+                  <li><div class="legendColor"></div>Fire</li>
+                  <li><div class="legendColor"></div>Terrorism</li>
+                  <li><div class="legendColor"></div>Kidnap</li>
+                  <li><div class="legendColor"></div>Car Accident</li>
+               </ul>
+
+
+            </div>
+
+            <div class="legendOpenCaption">
+
+               <h2 class="titleParameter">Map Parameters</h2>
+               <p class="parameterText">Select the desired parameter to visualize on the main map screen, keep in mind your previous parameters will be overwritten after applying the new ones.</p>
+               <div class="mapParameter">
+                  <label><input type="checkbox" name="option[]" value="1" />Green</label>
+                  <label><input type="checkbox" name="option[]" value="2" />Red</label>
+                  <label><input type="checkbox" name="option[]" value="3" />Blue</label>
+                  <label><input type="checkbox" name="option[]" value="4" />Orange</label>
+                  <label><input type="checkbox" name="option[]" value="5" />Purple</label>
+                  <label><input type="checkbox" name="option[]" value="6" />Black</label>
+                  <label><input type="checkbox" name="option[]" value="7" />White</label>
+               </div>
+
+
+
+            </div>
+
+
+         </div>
+
+
+         <div class="caseBoxExtra">
+            <div class="caseBoxInnerExtra">
+
+
+
+
+            </div>
+
+
+            <div class="tabContainerExtra">
+               <ul>
+                  <li class="tabMenuExtra" id="closeCaseListExtra">Close</li>
+               </ul>
+
+
+            </div>
+
+
+         </div>
+
+
+
+
+         <div class="caseBox">
+						<div class="caseBoxInner">
+
+
+
+
+						</div>
+
+
+
+            <!--------------------------------------------->
+
+
+            <div class="tabContainer">
+               <ul>
+                  <li class="tabMenu" id="closeCaseList">Close</li>
+               </ul>
+
+
+            </div>
+
+
+
+
+            <!-------------------------------------------->
+						<!--
+            <div class="currentCase">
+               <h2 class="caseTitle">CASO 40324 - ROBO VECINDARIO</h2>
+
+               <div class="caseInfoGrid">
+                  <h3>Informacion General:</h3>
+                  <div class="caseInfoField"><strong>Tipificacion:</strong> Robo</div>
+                  <div class="caseInfoField"><strong>Urgencia:</strong> Urgente</div>
+                  <div class="caseInfoField"><strong>Impacto:</strong> Impacto</div>
+                  <div class="caseInfoField"><strong>Resp. Investigacion:</strong> Marcos de Oliveiros</div>
+                  <div class="caseInfoField"><strong>Equipo Investigativo:</strong> Equipo3423</div>
+                  <div class="caseInfoField"><strong>Fuente de Informacion:</strong> Witness</div>
+                  <div class="caseInfoField"><strong>Fecha Inicio:</strong> 23/08/2014 22:34:12</div>
+               </div>
+
+               <div class="caseInfoDesc">
+                  <h3>Detalles:</h3>
+                  <div class="caseDescription">
+                     <p>Quisque iaculis felis et justo placerat viverra. Curabitur eu purus et felis porta eleifend eu id lacus. Maecenas luctus dui orci, sit amet cursus risus ornare quis. Sed neque est, tempor eu justo non, suscipit lacinia libero. Vivamus libero purus, facilisis quis sagittis vel, consequat luctus odio. Nulla ultrices viverra arcu et blandit. Fusce molestie quis mi sit amet malesuada. Praesent egestas sapien nibh. In sit amet lorem at risus tincidunt vehicula sit amet ut arcu. Aliquam at mi facilisis, adipiscing tellus sed, dictum enim. Praesent sed blandit ipsum, nec auctor augue.</p>
+
+                     <p>Sed placerat lacinia tortor nec sagittis. Donec faucibus pellentesque augue, vitae cursus nisl gravida ut. Donec vulputate sem et diam tincidunt egestas. Ut vel tellus non dolor blandit cursus. Aliquam pharetra lectus ornare dolor elementum, vitae aliquet justo rutrum. Vivamus condimentum, lectus aliquet ornare feugiat, sapien mauris porttitor tortor, ut pharetra augue ante at massa. In hac habitasse platea dictumst. Mauris dapibus eget ligula at placerat.</p>
+
+                  </div>
+
+               </div>
+
+
+               <div class="caseBottomGrid">
+                  <h3>Situacion:</h3>
+                  <div class="caseInfoField">Desconocida</div>
+                  <div class="caseInfoField">Nivel 1: N/A</div>
+                  <div class="caseInfoField">Nivel 1: N/A</div>
+                  <div class="caseInfoField">Nivel 1: N/A</div>
+                  <div class="caseInfoField">Nivel 1: N/A</div>
+                  <div class="caseInfoField">Latitud: -3.230124</div>
+                  <div class="caseInfoField">Latitud: -3.230124</div>
+               </div>
+
+
+							-->
+
+
+            </div>
+
+
+
+         </div>
+
+
+      <div class="footer">
+         <div class="copyInfo">Copyright 2014 IECISA - Inform&aacute;tica del Corte Ingl&eacute;s</div>
+      </div>
+
+
+
+	 <!--WRAPPER CLOSURE-->
+      </div>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+{
+    "name": "Indicadores",
+    "children": [
+        {
+            "name": "Resultados",
+            "children": [
+                { "name": "Coste de la Criminalidad", "valor": 2456 },
+                { "name": "Violencia contra Personas", "valor": 1450 },
+                { "name": "Delitos contra Propiedad", "valor": 754 },
+                { "name": "Delitos Leves", "valor": 600 },
+                { "name": "Delitos Nuevos", "valor": 156 }
+            ]
+        },
+        {
+            "name": "Procesos",
+            "children": [
+                { "name": "CAD", "valor": 234 },
+                { "name": "Inteligencia", "valor": 456 }
+            ]
+        },
+        {
+            "name": "Infraestructuras",
+            "children": [
+                { "name": "Casos Totales", "value": 5362 },
+                { "name": "Tiempo medio res. Casos", "value": 235 },
+                { "name": "Casos Abiertos", "value": 3022 },
+                { "name": "Tareas en Curso", "value": 45 },
+                { "name": "Tiempo medio de res. Tareas", "value": 567 }
+            ]
+        },
+        {
+            "name": "Ciudadanos",
+            "children": [
+                { "name": "Percepcion de Inseguridad", "value": 2304 },
+                { "name": "Actividad Policial", "value": 1452 },
+                { "name": "Malas Practicas Policiales", "value": 3560 },
+                { "name": "Relacion Policia - Comunidad", "value": 2344 }
+            ]
+        }
+    ]
+}

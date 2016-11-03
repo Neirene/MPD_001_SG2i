@@ -1,0 +1,59 @@
+﻿.timelineContainer{
+    position:absolute;
+    height:100%;
+    width:100%;
+    background-color:black;
+
+    z-index: 10;
+    display: none;
+    background-image: url('../img/timelineexample.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.timelineIntroContainer {
+    width:100%;
+    height:100%;
+    position:absolute;
+    background-color:grey;
+
+}
+
+.timelineTitle {
+
+    font-size:92px;
+    color:white;
+    position:absolute;
+    top:30%;
+    left:40%;
+
+
+}
+
+
+.timelineTitleBg {
+        width:100%;
+    height:100%;
+    position:absolute;
+    
+        background-color: rgb(48, 48, 48);
+
+
+}
+
+.timelineArea {
+
+            width:100%;
+    height:100%;
+    position:absolute;
+    
+
+            background-color:white;
+
+
+            color: black;
+
+            display: none;
+
+}

@@ -1,0 +1,173 @@
+.avanzadaSection01 {
+    width: 100%;
+    float: left;
+    position: absolute;
+    top: 43px;
+    left: 0px;
+}
+
+.section1a {
+    position: absolute;
+    top: 3px;
+    width: 380px;
+}
+.section1b {
+    position: absolute;
+    width: 380px;
+    left: 230px;
+    top: 5px;
+}
+
+
+.avanzadaSection02 {
+    width: 100%;
+    position: absolute;
+    top: 201px;
+    right: 0px;
+}
+
+.section2a {
+	
+}
+
+.section2b {
+	
+}
+.section2c {
+    position: absolute;
+	
+    width: 380px;
+}
+.section2d {
+    position: absolute;
+	
+    left: 220px;
+    top: 24px;
+}
+
+.section2d label {
+	color:grey;
+}
+
+.section2e {
+    width: 380px;
+	
+    position: absolute;
+    left: 271px;
+}
+
+
+.section2ba {
+    position: absolute;
+	
+    top: 76px;
+}
+
+.section2bb {
+    position: absolute;
+	
+    top: 101px;
+    width: 380px;
+}
+
+.section2bc {
+    position: absolute;
+	
+    top: 105px;
+    left: 219px;
+}
+
+.section2bc label {
+	color:grey;
+}
+
+.section2bd {
+    position: absolute;
+	
+    width: 380px;
+    top: 101px;
+    left: 271px;
+}
+
+.section2be {
+	
+}
+
+
+.avanzadaSection03 {
+    position: absolute;
+    top: 108px;
+    width: 61%;
+}
+.avanzadaSection04 {
+    position: absolute;
+    bottom: 8px;
+}
+
+.section4a {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 380px;
+}
+.section4b {
+    position: absolute;
+    left: 230px;
+    width: 380px;
+}
+
+
+
+
+
+.searchTypePlaceholder {
+    background-color: rgba(221, 221, 221, 0.22);
+    width: 103%;
+    height: 40px;
+    position: absolute;
+    right: -16px;
+    bottom: 3px;
+}
+
+.searchTypeCaptionContainer {
+    overflow: hidden;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: inherit;
+    width: 400px;
+}
+.searchTypeCaption {
+    position: absolute;
+    top: 14px;
+    font-size: 12px;
+    font-weight: 600;
+    width: 120px;
+    right: 200px;
+    color: rgb(60, 60, 60);
+}
+.searchTypeList {
+    position: absolute;
+    right: 20px;
+    top: 8px;
+}
+.searchTypeList ul {
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+.searchTypeList li {
+    float: left;
+    margin: 5px;
+    font-size: 12px;
+    cursor: pointer;
+}
+.searchTypeSel {
+    border-bottom: 2px solid rgb(81, 149, 194);
+    color: rgb(81, 149, 194);
+}
+
+
+.fullWidth {
+	width:100;
+}

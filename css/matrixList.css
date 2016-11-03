@@ -1,0 +1,302 @@
+﻿
+.headerForm {
+
+    width: 100%;
+    float: left;
+    height: 101px;
+}
+
+.headerForm h1 {
+    padding: 0px;
+
+    margin: 0px;
+    font-weight: 300;
+    border-bottom: 2px solid rgba(76, 87, 85, 0.6);
+    margin-top: 6px;
+}
+
+
+.headerForm p {
+    margin: 0px;
+
+    padding: 0px;
+    font-size: 13px;
+    margin-top: 6px;
+    display: block;
+    width: 400px;
+    width: 100%;
+}
+
+.subForm {
+    border-bottom: 1px solid grey;
+
+    width: 80%;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.tasksMatrixMenu{
+    height: 100%;
+        overflow:auto;
+}
+.taskMatrixContainer {
+    float: left;
+    width: 100%;
+    height: 60px;
+    position: relative;
+    background-color: rgb(41, 41, 41);
+    margin-top: 3px;
+    margin-bottom: 3px;
+    -webkit-animation: fadeIn 1000ms;
+
+}
+.squareArea {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+.sqrField {
+    margin: 1px;
+
+    float: left;
+    background-color: rgb(42, 120, 163);
+    display: block;
+    width: 22px;
+    height: 21px;
+    text-align: center;
+    line-height: 23px;
+    font-weight: bold;
+    font-size: 13px;
+    font-family: sans-serif;
+    pointer-events:none;
+}
+
+.matrixTitle{
+    position: absolute;
+    right: 1%;
+    top: 11px;
+    display: block;
+    width: 280px;
+    font-size: 16px;
+}
+.matrixSubTitle {
+    
+        position: absolute;
+    right: 1%;
+    
+        bottom: 11px;
+    
+        color: rgb(205, 205, 205);
+    display: block;
+    
+        width: 280px;
+    
+        font-size: 14px;
+    
+    
+}
+
+/*///////////////////////////////////////*/
+
+.taskMatrixMasterContainer {
+    margin-top: 14px;
+
+    position: relative;
+    height: 123px;
+}
+
+.taskMatrixContainerMaster {
+    float: left;
+    width: 100%;
+    height: 113px;
+    position: relative;
+    /* background-color: rgb(70, 5, 5); */
+    margin-top: 3px;
+    margin-bottom: 3px;
+    -webkit-animation: fadeIn 1000ms;
+
+}
+.squareAreaMaster {
+    width: 87px;
+    height: 85px;
+    position: absolute;
+    top: 2px;
+    left: 3px;
+}
+.sqrFieldMaster {
+    margin: 1px;
+
+    float: left;
+    background-color: rgb(48, 47, 47);
+    display: block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 39px;
+    font-weight: bold;
+    font-size: 19px;
+    font-family: sans-serif;
+    -webkit-transition: all 0.2s ease; -moz-transition: all 0.2s ease; -o-transition: all 0.2s ease; transition: all 0.2s ease;
+    cursor:pointer;
+}
+
+.sqrFieldMaster:hover {
+    background-color: rgb(42, 120, 163);
+    -webkit-transition: all 0.2s ease; -moz-transition: all 0.2s ease; -o-transition: all 0.2s ease; transition: all 0.2s ease;
+}
+
+.matrixTitleMaster{
+    position: absolute;
+    right: 1%;
+    top: 8px;
+    display: block;
+    width: 266px;
+    font-size: 20px;
+    -webkit-transition: all 0.2s ease; -moz-transition: all 0.2s ease; -o-transition: all 0.2s ease; transition: all 0.2s ease;
+}
+.matrixSubTitleMaster {
+    
+        position: absolute;
+    right: 1%;
+    
+        bottom: 35px;
+    
+        color: rgb(205, 205, 205);
+    display: block;
+    
+        width: 265px;
+    
+        font-size: 16px;
+    -webkit-transition: all 0.2s ease; -moz-transition: all 0.2s ease; -o-transition: all 0.2s ease; transition: all 0.2s ease;
+    
+}
+
+
+.matrixMasterMoreInfo {
+    position: absolute;
+
+    bottom: 0px;
+    right: 4px;
+    background-color: white;
+    color: grey;
+    padding: 3px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*////////////////////////////////////////////////*/
+
+.taskMatrixDashboard {
+
+    -webkit-animation: fadeIn 1000ms;
+}
+
+.taskMatrixList {
+    position: relative;
+    display: block;
+    width: 49%;
+    margin: 2px;
+    height: 340px;
+    float: left;
+    /* border: 1px solid rgb(243, 243, 243); */
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgb(243, 242, 242);
+}
+
+.matrixListContainer {}
+.matrixTitleDashboard {
+    
+        
+    color: rgb(66, 142, 179);
+    font-size: 26px;
+    
+    padding: 5px;
+}
+.matrixList {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    height: 260px;
+    overflow: auto;
+}
+.matrixList li {
+    
+        background-color: rgba(236, 236, 236, 0.29);
+    margin-bottom: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    /* color: white; */
+    text-indent: 30px;
+    /* float: left; */
+    /* display: block; */
+    width: 100%;
+    font-size: 15px;
+    background-image: url('../img/casesbticon.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 27px;
+    
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+}
+.matrixList li:hover {}
+
+.matrixMoreInfo {
+    text-align: center;
+    display: none;
+}
+
+.taskMatrixListContainer {
+    overflow: hidden;
+
+    height: 600px;
+}
+
+.cMod01 {
+    color: rgb(66, 138, 179);
+
+}
+
+.cMod02 {
+    color: rgb(66, 179, 143);
+
+}
+
+.cMod03 {
+    color: rgb(179, 66, 66);
+
+}
+
+.cMod04 {
+    color: rgb(174, 179, 66);
+
+}
